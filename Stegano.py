@@ -8,15 +8,28 @@ def dissimuler(chemin_hote, chemin_invitee):
     """
     # A vous de coder               
     pass
-
-def fusion_composantes(composante_hote, composante_invitee):
-    """
-    composante_hote(entier) : composante (R, V ou B)
-    composante_invitee(entier) : composante (R, V ou B)
-    retourne la composante fusionnée sous forme d'entier 
-    """
-    # A vous de coder               
-    pass
+    
+    
+def fusion_composantes(composante_invitee, composante_hote1,composante_hote2,composante_hote3,composante_hote4):
+    # On enleve le 'ob' et on converti en binaire
+    compo_invitee = bin(composante_invitee)[2:]
+    # On pass la veleur du pixel sur 8 bits
+    compo_invitee=(8-len(compo_invitee))*'0'+composante_invitee
+    # On recupere  les bits dela comp invitee
+    compo_invitee1 = compo_invitee[0:2]
+    compo_invitee2 = compo_invitee[2:4]
+    compo_invitee3 = compo_invitee[4:6]
+    compo_invitee4 = compo_invitee[6:8]
+    
+    compo1 = int(compo_invitee1,2) + composante_hote1
+    compo2 = int(compo_invitee2,2) + composante_hote2
+    compo3 = int(compo_invitee3,2) + composante_hote3
+    compo4 = int(compo_invitee4,2) + composante_hote4
+    
+    return(compo1,compo2,compo3,compo4)
+    
+    
+    
     
  
 def reveler(chemin_image):
