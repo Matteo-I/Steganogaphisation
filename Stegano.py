@@ -79,8 +79,8 @@ def reveler(chemin_image):
     largeur, hauteur = image.size # image.size retourne un tuple de 2 valeurs
     print(f"largeur = {largeur} pixels")
     print(f"hauteur = {hauteur} pixels")
-    h_revele = int(largeur/4)
-    l_revele = int(hauteur/4)
+    h_revele = int(largeur/3)
+    l_revele = int(hauteur/3)
     print(h_revele)
     pixels = image.load() # j'ai tous les pixels de l'image grace à load()
     image_revele = Image.new("RGB", (l_revele, h_revele))
@@ -134,9 +134,10 @@ def extraction_composante(value1,value2,value3,value4):
     h2 = bin(value2)[6:8]
     h3 = bin(value3)[6:8]
     h4 = bin(value4)[6:8]
-    compo_i = int(h1,2)+int(h2,2)+int(h3,2)+int(h4,2)
+    compo_i = h1+h2+h3+h4
+    compo_i = int(compo_i,2) 
     return (compo_i)
     # A vous de coder               
     
-#dissimuler("Images/61235709.bmp","Images/Dieu.bmp",2)
+#dissimuler("Images/612357091.bmp","Images/Dieu1.bmp",2)
 reveler("cachee.bmp")
